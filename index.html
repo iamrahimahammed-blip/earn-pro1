@@ -1,0 +1,24 @@
+<div style="font-size:0.75rem; color:var(--text-muted); white-space:pre-wrap; max-height:40px; overflow:hidden;">${o.data}</div>
+                        </div>
+                        <div style="display:flex; gap:6px;">
+                            <button onclick="approveSellOrder('${o.id}')" style="background:var(--secondary); color:#fff; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">অনুমোদন</button>
+                            <button onclick="rejectSellOrder('${o.id}')" class="btn-outline-danger">বাতিল</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            renderPlans();
+        }
+
+        // Initialize App on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (state.currentUser) {
+                navigateTo('home');
+            } else {
+                navigateTo('auth');
+            }
+        });
+    </script>
+</body>
+</html>
